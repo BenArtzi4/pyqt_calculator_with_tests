@@ -2,10 +2,15 @@
 from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QPushButton, QLineEdit, QLabel
 from logic import CalculatorActions
 
-
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.calculate_button = None
+        self.result_label = None
+        self.input1 = None
+        self.input2 = None
+        self.layout = None
+        self.central_widget = None
         self.setWindowTitle("Simple Calculator")
         self.setGeometry(100, 100, 300, 200)
         self.initUI()
@@ -22,6 +27,7 @@ class MainWindow(QMainWindow):
         self.calculate_button = QPushButton("Calculate", self)
         self.calculate_button.clicked.connect(self.calculate)
 
+        # Add widgets to the layout
         self.layout.addWidget(self.input1)
         self.layout.addWidget(self.input2)
         self.layout.addWidget(self.calculate_button)
