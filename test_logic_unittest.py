@@ -2,6 +2,7 @@
 import unittest
 from logic import CalculatorActions
 
+
 class TestCalculatorActions(unittest.TestCase):
     def test_add_numbers(self):
         self.assertEqual(CalculatorActions.add_numbers(1, 2), 3)
