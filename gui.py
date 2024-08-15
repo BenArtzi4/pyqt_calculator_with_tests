@@ -1,6 +1,7 @@
 # gui.py
 from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QPushButton, QLineEdit, QLabel
-from logic import CalculatorActions  # Import the new class
+from logic import CalculatorActions
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -30,7 +31,7 @@ class MainWindow(QMainWindow):
         try:
             num1 = float(self.input1.text())
             num2 = float(self.input2.text())
-            result = CalculatorActions.add_numbers(num1, num2)  # Use the new class
+            result = CalculatorActions.add_numbers(num1, num2)
             self.result_label.setText(f"Result: {result}")
         except ValueError:
             self.result_label.setText("Invalid input!")
