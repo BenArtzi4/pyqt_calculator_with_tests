@@ -27,3 +27,13 @@ class MainWindow(QMainWindow):
         self.layout.addWidget(self.input2)
         self.layout.addWidget(self.calculate_button)
         self.layout.addWidget(self.result_label)
+
+        def calculate(self):
+            try:
+                num1 = float(self.input1.text())
+                num2 = float(self.input2.text())
+                result = add_numbers(num1, num2)
+                self.result_label.setText(f"Result: {result}")
+            except ValueError:
+                self.result_label.setText("Invalid input!")
+
