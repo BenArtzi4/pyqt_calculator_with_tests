@@ -1,4 +1,6 @@
+# gui.py
 from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QPushButton, QLineEdit, QLabel
+from logic import CalculatorActions  # Import the new class
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -8,32 +10,27 @@ class MainWindow(QMainWindow):
         self.initUI()
 
     def initUI(self):
-        # Set up the central widget and layout
         self.central_widget = QWidget()
         self.setCentralWidget(self.central_widget)
         self.layout = QVBoxLayout(self.central_widget)
 
-        # Create and configure input fields and result label
         self.input1 = QLineEdit(self)
         self.input2 = QLineEdit(self)
         self.result_label = QLabel("Result: ", self)
 
-        # Create and configure the calculate button
         self.calculate_button = QPushButton("Calculate", self)
         self.calculate_button.clicked.connect(self.calculate)
 
-        # Add widgets to the layout
         self.layout.addWidget(self.input1)
         self.layout.addWidget(self.input2)
         self.layout.addWidget(self.calculate_button)
         self.layout.addWidget(self.result_label)
 
-        def calculate(self):
-            try:
-                num1 = float(self.input1.text())
-                num2 = float(self.input2.text())
-                result = add_numbers(num1, num2)
-                self.result_label.setText(f"Result: {result}")
-            except ValueError:
-                self.result_label.setText("Invalid input!")
-
+    def calculate(self):
+        try:
+            num1 = float(self.input1.text())
+            num2 = float(self.input2.text())
+            result = CalculatorActions.add_numbers(num1, num2)  # Use the new class
+            self.result_label.setText(f"Result: {result}")
+        except ValueError:
+            self.result_label.setText("Invalid input!")
