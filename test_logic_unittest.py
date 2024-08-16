@@ -22,6 +22,15 @@ class TestCalculatorActions(unittest.TestCase):
         self.assertEqual(CalculatorActions.multiply_numbers(0, 5), 0)
         self.assertEqual(CalculatorActions.multiply_numbers(-2, -3), 6)
 
+    def test_add_numbers_invalid_input(self):
+        with self.assertRaises(ValueError):
+            CalculatorActions.add_numbers('a', 1)
+        with self.assertRaises(ValueError):
+            CalculatorActions.add_numbers(1, 'b')
+        with self.assertRaises(ValueError):
+            CalculatorActions.add_numbers('a', 'b')
+
+
 
 if __name__ == '__main__':
     unittest.main()
