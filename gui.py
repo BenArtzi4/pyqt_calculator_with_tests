@@ -1,28 +1,54 @@
 # gui.py
 from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QPushButton, QLineEdit, QLabel
+from PyQt5.QtGui import QFont
+from PyQt5.QtCore import Qt
 from logic import CalculatorActions
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Advanced Calculator")
-        self.setGeometry(100, 100, 300, 300)
+        self.setGeometry(100, 100, 400, 400)
+        self.setStyleSheet("background-color: #2c3e50; color: #ecf0f1;")
 
         # Initialize all attributes directly in __init__
         self.central_widget: QWidget = QWidget()
         self.layout: QVBoxLayout = QVBoxLayout(self.central_widget)
-        self.input1: QLineEdit = QLineEdit(self)
-        self.input2: QLineEdit = QLineEdit(self)
-        self.result_label: QLabel = QLabel("Result: ", self)
+        self.layout.setSpacing(20)
 
-        # Buttons for different operations
+        # Set up input fields with styling
+        self.input1: QLineEdit = QLineEdit(self)
+        self.input1.setPlaceholderText("Enter first number")
+        self.input1.setFont(QFont("Arial", 14))
+        self.input1.setStyleSheet("padding: 10px; border-radius: 5px; border: 2px solid #16a085;")
+
+        self.input2: QLineEdit = QLineEdit(self)
+        self.input2.setPlaceholderText("Enter second number")
+        self.input2.setFont(QFont("Arial", 14))
+        self.input2.setStyleSheet("padding: 10px; border-radius: 5px; border: 2px solid #16a085;")
+
+        # Set up the result label with styling
+        self.result_label: QLabel = QLabel("Result: ", self)
+        self.result_label.setFont(QFont("Arial", 16))
+        self.result_label.setAlignment(Qt.AlignCenter)
+        self.result_label.setStyleSheet("padding: 10px; border-radius: 5px; background-color: #34495e;")
+
+        # Buttons for different operations with styling
         self.add_button: QPushButton = QPushButton("Add", self)
         self.sub_button: QPushButton = QPushButton("Subtract", self)
         self.mul_button: QPushButton = QPushButton("Multiply", self)
 
+        button_style = (
+            "padding: 10px; border-radius: 5px; border: none; background-color: #16a085;"
+            "color: #ecf0f1; font-size: 14px;"
+        )
+        self.add_button.setStyleSheet(button_style)
+        self.sub_button.setStyleSheet(button_style)
+        self.mul_button.setStyleSheet(button_style)
+
         self.setCentralWidget(self.central_widget)
 
-        # Set up the UI layout
+        # Set up the UI layout with styled components
         self.layout.addWidget(self.input1)
         self.layout.addWidget(self.input2)
         self.layout.addWidget(self.add_button)
