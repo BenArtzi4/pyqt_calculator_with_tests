@@ -20,30 +20,37 @@ The calculator supports basic arithmetic operations such as addition, subtractio
 ## Installation
 
 1. Clone the repository:
+   ```bash
    git clone https://github.com/your-username/pyqt_calculator_with_tests.git
    cd pyqt_calculator_with_tests
 
 2. Install the required dependencies:
+   ```bash
    pip install -r requirements.txt
 
 ## Usage
-
 To run the calculator application:
-python gui.py
+   ```bash
+   python gui.py
+   ```
 
 ### Running Tests
 
 #### `unittest`
 
 To run the tests using `unittest`, execute the following command:
-python -m unittest test_logic_unittest.py
+   ```bash
+   python -m unittest test_logic_unittest.py
+   ```
 
 <img width="425" alt="unittest run" src="https://github.com/user-attachments/assets/a59ce387-2038-4271-9d7a-31432cb6ceac">
 
 #### `pytest`
 
 To run the tests using `pytest`, execute the following command:
-pytest test_logic_pytest.py
+   ```bash
+   pytest test_logic_pytest.py
+   ```
 
 <img width="901" alt="pytest run" src="https://github.com/user-attachments/assets/9a1574ae-f7ee-49d4-8345-5dd001ff5db3">
 
