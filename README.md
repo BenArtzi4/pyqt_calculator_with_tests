@@ -21,7 +21,7 @@ The calculator supports basic arithmetic operations such as addition, subtractio
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/pyqt_calculator_with_tests.git
+   git clone https://github.com/BenArtzi4/pyqt_calculator_with_tests.git
    cd pyqt_calculator_with_tests
 
 2. Install the required dependencies:
