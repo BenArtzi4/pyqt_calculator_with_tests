@@ -31,7 +31,7 @@ The calculator supports basic arithmetic operations such as addition, subtractio
 ## Usage
 To run the calculator application:
    ```bash
-   python gui.py
+   python main.py
    ```
 
 ### Running Tests
