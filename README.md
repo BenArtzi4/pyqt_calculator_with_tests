@@ -26,7 +26,7 @@ The calculator supports basic arithmetic operations such as addition, subtractio
 
 2. Install the required dependencies:
    ```bash
-   pip install -r requirements.txt
+   pip install PyQt5 pytest unittest
 
 ## Usage
 To run the calculator application:
